@@ -18,6 +18,7 @@ get('/services') { haml :services }
 get('/gallery') { haml :gallery }
 
 post '/contacts' do
-  Message.new(params[:contact]).deliver
+  Message.new(params[:message]).deliver
+  logger.info "=========== Mail sent"
   redirect to('/')
 end
