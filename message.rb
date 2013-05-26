@@ -1,7 +1,7 @@
 #coding: UTF-8
 class Message
 
-  attr_accessor :tel, :extra_info, :name, :serv, :email
+  attr_accessor :tel, :extra_info, :name, :serv, :email, :honeypot
 
   def initialize(args ={})
     @tel        = args[:tel]
@@ -9,26 +9,19 @@ class Message
     @name       = args[:name]
     @serv       = args[:serv]
     @email      = args[:email]
+    @honeypot   = args[:site]
   end
 
   def deliver
-    Pony.mail(
-      from: 'kranbortspb@gmail.com',
-      to: 'kranbortspb@gmail.com',
+    return false if spam?
+    Pony.mail({
       subject: "#{name} связался с вами",
       body: message_body,
-      port: '587',
-      via: :smtp,
-      enable_starttls_auto: true,
-      via_options: {
-        address: 'smtp.gmail.com',
-        port: '587',
-        enable_starttls_auto: true,
-        user_name: 'kranbortspb',
-        password: 'qwedsa123',
-        authentication: :plain,
-        domain: 'localhost.localdomain'
     })
+  end
+
+  def spam?
+    !honeypot.empty?
   end
 
   private

@@ -5,13 +5,16 @@
       %input{type: 'text', name: 'message[name]', placeholder: 'Ваше имя', required: true}
     .field
       %label{for: 'email'} Ваш email
-      %input{type: 'text', name: 'message[email]', placeholder: 'ya@yandex.ru'}
+      %input{type: 'email', name: 'message[email]', placeholder: 'ya@yandex.ru'}
     .field
       %label{for: 'tel'} Ваш телефон*
-      %input{type: 'text', name: 'message[tel]', placeholder: '89045883333', required: true}
+      %input{type: 'tel', name: 'message[tel]', placeholder: '89045883333', required: true}
     .field
       %label{for: 'serv'} Услуга
       %input{type: 'text', name: 'message[serv]', placeholder: 'Перевозка'}
+    .field
+      %label{for: 'site'} Сайт*
+      %input{type: 'text', name: 'message[site]', placeholder: 'Перевозка'}
   #bottom_form
     .field
       %label{for: 'extra_info'} Ваше сообщение*
