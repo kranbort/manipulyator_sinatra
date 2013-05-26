@@ -11,6 +11,11 @@ get '/contacts' do
   haml :contacts
 end
 
+post '/contacts' do
+  logger.info "============= #{params}"
+  redirect to('/')
+end
+
 get '/faq' do
   haml :faq
 end

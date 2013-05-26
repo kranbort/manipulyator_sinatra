@@ -8,7 +8,7 @@ body
   border: 1px solid black
 
 #header
-  background: url('head44.jpg')
+  background: url('/images/head44.jpg')
   width: 980px
   height: 270px
   position: relative
@@ -16,7 +16,7 @@ body
 
 #header #teaser
   position: absolute
-  background: url('teaser.jpg')
+  background: url('/images/teaser.jpg')
   top: 172px
   left: 384px
   width: 579px
@@ -38,7 +38,6 @@ body
 #left_column
   float: left
   width: 204px
-  height: 180px
   margin: 0 25px 0 30px
 
 
@@ -49,7 +48,7 @@ body
 
 
 #left_column ul li
-  background: url('menu.jpg')
+  background: url('/images/menu.jpg')
   width: 180px
   height: 25px
   margin-bottom: 3px
@@ -68,7 +67,7 @@ body
   float: left
   width: 450px
   height: 100%
-  background-image: url('orange-line.png')
+  background-image: url('/images/orange-line.png')
   background-position: top center
   background-repeat: no-repeat
 
@@ -99,7 +98,7 @@ body
   text-align: center
 
 #right_column p.form_header
-  background: url("forma-1.jpg") repeat scroll 0 0 transparent
+  background: url("/images/forma-1.jpg") repeat scroll 0 0 transparent
   padding-top: 6px
   margin: 0
   height: 20px
@@ -114,19 +113,19 @@ body
 #footer
   width: 980px
   height: 100px
-  background: url('footer-line.png') repeat-x
+  background: url('/images/footer-line.png') repeat-x
   position: relative
   border-top: 1px solid black
 
 #gears
-  background-image: url("gears.png")
+  background-image: url("/images/gears.png")
   height: 90px
   position: absolute
   top: 11px
   width: 93px
 
 #footer_links
-  background-image: url("footer-links.png")
+  background-image: url("/images/footer-links.png")
   height: 30px
   position: absolute
   top: 32px
@@ -134,7 +133,7 @@ body
   width: 77px
 
 #footer_tel
-  background-image: url("footer-tele2.png")
+  background-image: url("/images/footer-tele2.png")
   background-repeat: no-repeat
   height: 38px
   position: absolute
@@ -172,3 +171,28 @@ table tr td
 
 .price_table, .price_table td, .price_table th
   font-size: 16px
+
+
+// order form comments
+
+.field input
+  width: 183px
+.field textarea
+  width: 183px
+  height: 70px
+#top_form
+  background: url("/images/forma-up.jpg") repeat scroll 0 0 transparent
+  height: 192px
+  padding-top: 8px
+#bottom_form
+  background: url("/images/forma-down.jpg") repeat scroll 0 0 transparent
+  height: 135px
+label
+  color: #1d5870
+  font-size: 14px
+  font-weight: bold
+#top_form select
+  width: 183
+
+.field_with_errors input, .field_with_errors textarea
+  border: 1px solid red
