@@ -16,7 +16,7 @@ class Message
       from: 'kranbortspb@gmail.com',
       to: 'kranbortspb@gmail.com',
       subject: "#{name} связался с вами",
-      body: ,
+      body: message_body,
       port: '587',
       via: :smtp,
       enable_starttls_auto: true,
@@ -30,6 +30,8 @@ class Message
         domain: 'localhost.localdomain'
     })
   end
+
+  private
 
   def message_body
     "Телефон: #{tel} \n Услуга: #{serv} \n Email: #{email} \n Дополнительная информация: #{extra_info}"
