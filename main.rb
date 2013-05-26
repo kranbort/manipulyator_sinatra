@@ -3,37 +3,18 @@ require 'sinatra/reloader' if development?
 require 'sass'
 require 'haml'
 
-get '/' do
-  haml :index
-end
+require 'sass/plugin/rack'
+use Sass::Plugin::Rack
 
-get '/contacts' do
-  haml :contacts
-end
+get('/') { haml :index }
+get('/contacts') { haml :contacts }
+get('/faq') { haml :faq }
+get('/info') { haml :contacts }
+get('/prices') { haml :prices }
+get('/services') { haml :services }
+get('/gallery') { haml :gallery }
 
 post '/contacts' do
   logger.info "============= #{params}"
   redirect to('/')
 end
-
-get '/faq' do
-  haml :faq
-end
-
-get '/info' do
-  haml :contacts
-end
-
-get '/prices' do
-  haml :prices
-end
-
-get '/services' do
-  haml :services
-end
-
-get '/gallery' do
-  haml :gallery
-end
-
-get('/styles.css') { sass :styles }
