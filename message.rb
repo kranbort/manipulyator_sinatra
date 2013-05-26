@@ -25,7 +25,7 @@ class Message
         port: '587',
         enable_starttls_auto: true,
         user_name: 'kranbortspb',
-        password : 'qwedsa123',
+        password: 'qwedsa123',
         authentication: :plain,
         domain: 'localhost.localdomain'
     })
