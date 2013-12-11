@@ -1,6 +1,6 @@
 #coding: UTF-8
 require 'sinatra'
-require 'sinatra/reloader' if development?
+# require 'sinatra/reloader' if development?
 require 'pony'
 require 'sass'
 require 'haml'
@@ -28,6 +28,9 @@ configure do
   }
 end
 Pony.options = settings.email_options
+before do
+  redirect request.url.sub(/www\./, ''), 301 if request.host =~ /^www/
+end
 
 get('/') { haml :index }
 get('/contacts') { haml :contacts }
